@@ -10,4 +10,7 @@
     <color name="background">#FFE8A2</color>
     <color name="background_layout">#DDB94C</color>
     <color name="bt_Joueur">#449AC9</color>
+
+    <color name="bt_reponse">#D1980E</color>
+    <color name="bt_reponse_2">#8E6805</color>
 </resources>

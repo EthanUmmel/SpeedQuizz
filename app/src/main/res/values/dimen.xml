@@ -9,7 +9,7 @@
     <dimen name="main_marge_bt">15dp</dimen>
 
     <!-- Dimensions page game -->
-    <dimen name="game_marge_boutton">20dp</dimen>
+    <dimen name="game_marge_boutton">25dp</dimen>
 
 
 

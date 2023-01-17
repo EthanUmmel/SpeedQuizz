@@ -10,16 +10,82 @@
     tools:context=".activity_game">
 
     <Button
+        android:id="@+id/bt_reponseJ1"
+        style="@style/style_bouton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/bt_Joueur"
-        android:padding="@dimen/game_marge_boutton">
+        android:layout_marginTop="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:padding="@dimen/game_marge_boutton"
+        android:layout_margin="@dimen/main_marge_bt" />
+
+
+    <TextView
+        android:id="@+id/questionJ1"
+        android:maxLines="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/bt_reponseJ2"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="50dp"
+        android:textSize="20sp"
+        android:text="@string/question1"/>
+
+
+    <TextView
+        android:id="@+id/scoreJ1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="50dp"
+        android:textSize="50sp"
+        android:text="@string/ScoreJ1"/>
 
 
 
-    </Button>
 
 
+
+
+    <TextView
+        android:id="@+id/scoreJ2"
+        android:rotation="180"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="50dp"
+        android:textSize="50sp"
+        android:text="@string/ScoreJ2"/>
+
+
+
+    <TextView
+        android:id="@+id/questionJ2"
+        android:rotation="180"
+        android:maxLines="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@id/bt_reponseJ1"
+        android:layout_alignParentTop="true"
+        android:layout_margin="50dp"
+        android:textSize="20sp"
+        android:text="@string/question1"/>
+
+
+
+    <Button
+        android:id="@+id/bt_reponseJ2"
+        style="@style/style_bouton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/game_marge_boutton"
+        android:layout_marginEnd="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_margin="@dimen/main_marge_bt" />
 
 
 </RelativeLayout>
