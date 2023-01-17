@@ -9,6 +9,7 @@
     android:background="@color/background"
     tools:context=".activity_game">
 
+    <!--Bouton de résultat du joueur 2-->
     <Button
         android:id="@+id/bt_reponseJ1"
         style="@style/style_bouton"
@@ -18,9 +19,19 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:padding="@dimen/game_marge_boutton"
-        android:layout_margin="@dimen/main_marge_bt" />
+        android:layout_margin="@dimen/main_marge_bt"
+        android:text="@string/joy"/>
 
+    <!--Nom du joueur 2-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/main_indice_layoutJ2"
+        android:layout_above="@id/bt_reponseJ2"
+        android:layout_alignParentStart="true"
+        android:layout_margin="15dp"/>
 
+    <!--question du joueur 2-->
     <TextView
         android:id="@+id/questionJ1"
         android:maxLines="1"
@@ -32,7 +43,7 @@
         android:textSize="20sp"
         android:text="@string/question1"/>
 
-
+    <!--Score du joueur 2-->
     <TextView
         android:id="@+id/scoreJ1"
         android:layout_width="wrap_content"
@@ -43,12 +54,30 @@
         android:textSize="50sp"
         android:text="@string/ScoreJ1"/>
 
+    <TextView
+        android:id="@+id/timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:rotation="-90"
+        android:layout_margin="75dp"
+        android:textSize="40sp"
+        android:textColor="@color/RougeVif"
+        android:text="@string/timer"/>
 
 
 
 
 
 
+
+
+
+
+
+
+    <!--Score du joueur 1-->
     <TextView
         android:id="@+id/scoreJ2"
         android:rotation="180"
@@ -61,7 +90,7 @@
         android:text="@string/ScoreJ2"/>
 
 
-
+    <!--question du joueur 1-->
     <TextView
         android:id="@+id/questionJ2"
         android:rotation="180"
@@ -74,18 +103,30 @@
         android:textSize="20sp"
         android:text="@string/question1"/>
 
+    <!--Nom du joueur 1-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:rotation="180"
+        android:layout_height="wrap_content"
+        android:text="@string/main_indice_layoutJ1"
+        android:layout_below="@id/bt_reponseJ1"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="15dp"/>
 
-
+    <!--Bouton de résultat du joueur 1-->
     <Button
         android:id="@+id/bt_reponseJ2"
         style="@style/style_bouton"
+        android:text="@string/joy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="@dimen/game_marge_boutton"
-        android:layout_marginEnd="10dp"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_margin="@dimen/main_marge_bt" />
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/main_marge_bt"
+        android:layout_marginTop="@dimen/main_marge_bt"
+        android:layout_marginEnd="@dimen/main_marge_bt"
+        android:layout_marginBottom="@dimen/main_marge_bt"
+        android:padding="@dimen/game_marge_boutton" />
 
 
 </RelativeLayout>

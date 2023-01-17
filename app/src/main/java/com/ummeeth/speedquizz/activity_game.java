@@ -40,7 +40,7 @@ public class activity_game extends AppCompatActivity {
 
 
     private void startCountDownTimer() {
-        new CountDownTimer(6000, 1000){
+        new CountDownTimer(3000, 1000){
             public void onTick(long millisUntilFinished){
                 //XXX.setText(""+millisUntilFinished / 1000);
             };

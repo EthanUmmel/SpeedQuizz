@@ -7,4 +7,6 @@
     <string name="question1">Salut, ça va ?</string>
     <string name="ScoreJ1">0</string>
     <string name="ScoreJ2">0</string>
+    <string name="joy">－O－</string>
+    <string name="timer">STOP!!!</string>
 </resources>
