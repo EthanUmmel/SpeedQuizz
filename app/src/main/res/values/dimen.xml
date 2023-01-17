@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dimension générales -->
+    <dimen name="app_marge">30dp</dimen>
+
+    <!-- Dimensions page main -->
+    <dimen name="main_margesVerticales_titre">40dp</dimen>
+    <dimen name="main_marges_layout">50dp</dimen>
+    <dimen name="main_marge_bt">15dp</dimen>
+
+    <!-- Dimensions page game -->
+    <dimen name="game_marge_boutton">20dp</dimen>
+
+
+
+</resources>
