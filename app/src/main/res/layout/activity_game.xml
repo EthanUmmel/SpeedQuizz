@@ -27,6 +27,7 @@
 
     <!--Nom du joueur 2-->
     <TextView
+        android:id="@+id/PseudoJ2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/main_indice_layoutJ2"
@@ -126,6 +127,7 @@
 
     <!--Nom du joueur 1-->
     <TextView
+        android:id="@+id/PseudoJ1"
         android:layout_width="wrap_content"
         android:rotation="180"
         android:layout_height="wrap_content"

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.Bundle;
+import android.widget.TextView;
 
 public class activity_game extends AppCompatActivity {
 
@@ -15,6 +16,10 @@ public class activity_game extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+
+        TextView nomJoueur1 = findViewById(R.id.PseudoJ1);
+        TextView nomJoueur2 = findViewById(R.id.PseudoJ2);
+
     }
 
     private void startQuestionIterative() {
