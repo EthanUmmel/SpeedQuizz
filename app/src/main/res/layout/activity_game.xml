@@ -5,14 +5,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:screenOrientation="landscape"
     android:background="@color/background"
+
+    android:screenOrientation="landscape"
     tools:context=".activity_game">
 
     <!--Bouton de résultat du joueur 2-->
     <Button
         android:id="@+id/bt_reponseJ1"
         style="@style/style_bouton"
+        android:textSize="16sp"
+        android:textColor="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -55,16 +58,18 @@
         android:text="@string/ScoreJ1"/>
 
     <TextView
-        android:id="@+id/timer"
+        android:id="@+id/timerJ2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
-        android:rotation="-90"
-        android:layout_margin="75dp"
-        android:textSize="40sp"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="75dp"
+        android:layout_marginEnd="75dp"
+        android:layout_marginBottom="75dp"
+        android:text="@string/timer"
         android:textColor="@color/RougeVif"
-        android:text="@string/timer"/>
+        android:textSize="40sp" />
 
 
 
@@ -73,6 +78,22 @@
 
 
 
+
+
+    <TextView
+        android:id="@+id/timerJ1"
+        android:rotation="180"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="75dp"
+        android:layout_marginEnd="75dp"
+        android:layout_marginBottom="75dp"
+        android:text="@string/timer"
+        android:textColor="@color/RougeVif"
+        android:textSize="40sp" />
 
 
 
@@ -118,6 +139,8 @@
         android:id="@+id/bt_reponseJ2"
         style="@style/style_bouton"
         android:text="@string/joy"
+        android:textColor="@color/white"
+        android:textSize="16sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
