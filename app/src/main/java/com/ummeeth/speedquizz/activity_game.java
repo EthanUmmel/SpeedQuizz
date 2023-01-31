@@ -49,6 +49,7 @@ public class activity_game extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         startCountDownTimer();
+
         startQuestionIterative();
     }
 
@@ -62,7 +63,8 @@ public class activity_game extends AppCompatActivity {
                 int indexQuestion = 0;
                 Question questionActuel = listeQuestion.get(indexQuestion);
                 listeQuestion.remove(indexQuestion);
-
+                timerJ1.setText("");
+                timerJ2.setText("");
                 textQuestionJ1.setText(questionActuel.getIntitule());
                 textQuestionJ2.setText(questionActuel.getIntitule());
 
@@ -73,12 +75,12 @@ public class activity_game extends AppCompatActivity {
                 }else{
                     //Do question iterative
 
-                    handler.postDelayed(this, 2000);
+                    handler.postDelayed(this, 5000);
                 }
             }
         };
 
-        handler.postDelayed(questionRunnable, 1000);
+        handler.postDelayed(questionRunnable, 4000);
 
     }
 
