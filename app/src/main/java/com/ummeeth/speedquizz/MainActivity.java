@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
                     ET_nomJoueur2.setVisibility(View.VISIBLE);
                 } else {
                     ET_nomJoueur2.setVisibility(View.GONE);
+                    resetField();
                 }
             }
             @Override
@@ -62,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
                     BT_Start.setVisibility(View.VISIBLE);
                 } else {
                     BT_Start.setVisibility(View.GONE);
+                    resetField();
                 }
             }
             @Override
@@ -82,7 +84,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
 
-
+    private void resetField() {
+        ET_nomJoueur1.setText("");
+        ET_nomJoueur2.setText("");
+        BT_Start.setEnabled(false);
     }
 }

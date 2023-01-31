@@ -4,9 +4,8 @@
     <string name="main_indice_layoutJ1">Nom Joueur 1</string>
     <string name="main_indice_layoutJ2">Nom Joueur 2</string>
     <string name="main_bt_start">Commencer</string>
-    <string name="question1">Salut, ça va ?</string>
     <string name="ScoreJ1">0</string>
     <string name="ScoreJ2">0</string>
     <string name="joy">－O－</string>
-    <string name="timer">STOP!!!</string>
+    <string name="timer">Partez !!!</string>
 </resources>
