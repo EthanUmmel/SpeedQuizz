@@ -2,10 +2,13 @@ package com.ummeeth.speedquizz;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -18,6 +21,9 @@ public class activity_game extends AppCompatActivity {
     private TextView textQuestionJ2;
     private TextView timerJ1;
     private TextView timerJ2;
+    private Button BTJ1;
+    private Button BTJ2;
+
 
     ArrayList<Question> listeQuestion = new ArrayList<>();
 
@@ -28,31 +34,27 @@ public class activity_game extends AppCompatActivity {
         setContentView(R.layout.activity_game);
         Intent activity_game = getIntent();
 
+        QuestionManager qManager = new QuestionManager(this);
+
         TextView nomJoueur1 = findViewById(R.id.PseudoJ1);
         TextView nomJoueur2 = findViewById(R.id.PseudoJ2);
         textQuestionJ1 = findViewById(R.id.questionJ1);
         textQuestionJ2 = findViewById(R.id.questionJ2);
         timerJ1 = findViewById(R.id.timerJ1);
         timerJ2 = findViewById(R.id.timerJ2);
+        BTJ1 = findViewById(R.id.bt_reponseJ1);
+        BTJ2 = findViewById(R.id.bt_reponseJ2);
 
         nomJoueur1.setText(activity_game.getStringExtra("NomJoueur1"));
         nomJoueur2.setText(activity_game.getStringExtra("NomJoueur2"));
 
-        Question question1 = new Question("Il y a plus de 10 milliards de personnes sur Terre", false);
-        Question question2 = new Question("Nous tournons autour du soleil", true);
-
-        listeQuestion.add(question1);
-        listeQuestion.add(question2);
     }
 
     @Override
     protected void onStart() {
         super.onStart();
         startCountDownTimer();
-
-        startQuestionIterative();
     }
-
 
 
     private void startQuestionIterative() {
@@ -60,13 +62,9 @@ public class activity_game extends AppCompatActivity {
         questionRunnable = new Runnable() {
             @Override
             public void run() {
-                int indexQuestion = 0;
-                Question questionActuel = listeQuestion.get(indexQuestion);
-                listeQuestion.remove(indexQuestion);
+
                 timerJ1.setText("");
                 timerJ2.setText("");
-                textQuestionJ1.setText(questionActuel.getIntitule());
-                textQuestionJ2.setText(questionActuel.getIntitule());
 
                 //Détecter si c'est la dernière question
                 if (listeQuestion.isEmpty()){
@@ -76,6 +74,7 @@ public class activity_game extends AppCompatActivity {
                     //Do question iterative
 
                     handler.postDelayed(this, 5000);
+
                 }
             }
         };
@@ -95,6 +94,7 @@ public class activity_game extends AppCompatActivity {
             public void onFinish(){
                 timerJ1.setText(getText(R.string.timer));
                 timerJ2.setText(getText(R.string.timer));
+                startQuestionIterative();
             }
 
         }.start();
