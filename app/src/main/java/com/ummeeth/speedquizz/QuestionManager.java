@@ -9,13 +9,13 @@ import java.util.List;
 
 public class QuestionManager {
 
-    private List<Question> questionList;
+    private ArrayList<Question> questionList;
 
     public QuestionManager(Context context) {
         questionList = initQuestionList(context);
     }
 
-    public List<Question> getQuestionList() {
+    public ArrayList<Question> getQuestionList() {
         return questionList;
     }
 

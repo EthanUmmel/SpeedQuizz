@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class activity_game extends AppCompatActivity {
 
@@ -23,10 +24,15 @@ public class activity_game extends AppCompatActivity {
     private TextView timerJ2;
     private Button BTJ1;
     private Button BTJ2;
+    private TextView ScoreJ1;
+    private TextView ScoreJ2;
 
 
     ArrayList<Question> listeQuestion = new ArrayList<>();
-
+    Random rand = new Random();
+    int scoreJoueur1;
+    int scoreJoueur2;
+    boolean repondu = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +50,11 @@ public class activity_game extends AppCompatActivity {
         timerJ2 = findViewById(R.id.timerJ2);
         BTJ1 = findViewById(R.id.bt_reponseJ1);
         BTJ2 = findViewById(R.id.bt_reponseJ2);
+        ScoreJ1 = findViewById(R.id.scoreJ1);
+        ScoreJ2 = findViewById(R.id.scoreJ2);
 
+
+        listeQuestion.addAll(qManager.getQuestionList());
         nomJoueur1.setText(activity_game.getStringExtra("NomJoueur1"));
         nomJoueur2.setText(activity_game.getStringExtra("NomJoueur2"));
 
@@ -54,6 +64,7 @@ public class activity_game extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         startCountDownTimer();
+
     }
 
 
@@ -62,36 +73,81 @@ public class activity_game extends AppCompatActivity {
         questionRunnable = new Runnable() {
             @Override
             public void run() {
-
+                BTJ1.setEnabled(true);
+                BTJ2.setEnabled(true);
                 timerJ1.setText("");
                 timerJ2.setText("");
 
                 //Détecter si c'est la dernière question
-                if (listeQuestion.isEmpty()){
-                    //Do last question process
-                    System.out.println("Hello");
-                }else{
-                    //Do question iterative
-
+                if (listeQuestion.size() == 1) {
+                    textQuestionJ1.setText(listeQuestion.get(0).getIntitule());
+                    textQuestionJ2.setText(listeQuestion.get(0).getIntitule());
+                    BTJ1.setOnClickListener(view -> {
+                        scoreJoueur1 += listeQuestion.get(0).getReponse() == 0 ? 1 : -1;
+                        ScoreJ1.setText(String.valueOf(scoreJoueur1));
+                        BTJ1.setEnabled(false);
+                        BTJ2.setEnabled(false);
+                        repondu = true;
+                    });
+                    BTJ2.setOnClickListener(view -> {
+                        scoreJoueur2 += listeQuestion.get(0).getReponse() == 0 ? 1 : -1;
+                        ScoreJ2.setText(String.valueOf(scoreJoueur2));
+                        BTJ1.setEnabled(false);
+                        BTJ2.setEnabled(false);
+                        repondu = true;
+                    });
                     handler.postDelayed(this, 5000);
+                    timerJ1.setText(R.string.fin);
+                    timerJ2.setText(R.string.fin);
+                    textQuestionJ1.setText("");
+                    textQuestionJ2.setText("");
 
+
+                } else {
+                    //Do question iterative
+                    int index = rand.nextInt(listeQuestion.size());
+                    textQuestionJ1.setText(listeQuestion.get(index).getIntitule());
+                    textQuestionJ2.setText(listeQuestion.get(index).getIntitule());
+                    BTJ1.setOnClickListener(view -> {
+                        scoreJoueur1 += listeQuestion.get(index).getReponse() == 0 ? 1 : -1;
+                        ScoreJ1.setText(String.valueOf(scoreJoueur1));
+                        BTJ1.setEnabled(false);
+                        BTJ2.setEnabled(false);
+                        listeQuestion.remove(index);
+                        repondu = true;
+                    });
+                    BTJ2.setOnClickListener(view -> {
+                        scoreJoueur2 += listeQuestion.get(index).getReponse() == 0 ? 1 : -1;
+                        ScoreJ2.setText(String.valueOf(scoreJoueur2));
+                        BTJ1.setEnabled(false);
+                        BTJ2.setEnabled(false);
+                        listeQuestion.remove(index);
+                        repondu = true;
+                    });
+                    handler.postDelayed(this, 5000);
+ /*                   if (!repondu && listeQuestion.get(index).getReponse() == 1) {
+                        scoreJoueur1++;
+                        scoreJoueur2++;
+                        ScoreJ1.setText(String.valueOf(scoreJoueur1));
+                        ScoreJ2.setText(String.valueOf(scoreJoueur2));
+                    }*/
                 }
             }
         };
 
-        handler.postDelayed(questionRunnable, 4000);
+        handler.postDelayed(questionRunnable, 1000);
 
     }
 
     private void startCountDownTimer() {
-        new CountDownTimer(3000, 1000){
-            public void onTick(long millisUntilFinished){
-                String decompte = String.valueOf(millisUntilFinished/1000);
+        new CountDownTimer(4000, 1000) {
+            public void onTick(long millisUntilFinished) {
+                String decompte = String.valueOf(millisUntilFinished / 1000);
                 timerJ1.setText(decompte);
                 timerJ2.setText(decompte);
             }
 
-            public void onFinish(){
+            public void onFinish() {
                 timerJ1.setText(getText(R.string.timer));
                 timerJ2.setText(getText(R.string.timer));
                 startQuestionIterative();
@@ -99,8 +155,5 @@ public class activity_game extends AppCompatActivity {
 
         }.start();
     }
-
-
-
 
 }

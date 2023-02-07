@@ -20,6 +20,12 @@ public class SpeedQuizzSqlite extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(sqlCreateDataTable);
         sqLiteDatabase.execSQL("INSERT INTO Question VALUES (null,\"Il y a plus de 10 milliards de personnes sur Terre\", 1)");
         sqLiteDatabase.execSQL("INSERT INTO Question VALUES (null,\"Nous tournons autour du soleil\", 0)");
+        sqLiteDatabase.execSQL("INSERT INTO Question VALUES (null,\"Raval est génial:]\", 0)");
+        sqLiteDatabase.execSQL("INSERT INTO Question VALUES (null,\"Rouge et bleu donne vert\", 1)");
+        sqLiteDatabase.execSQL("INSERT INTO Question VALUES (null,\"Le clavier qwertz est suisse\", 0)");
+        sqLiteDatabase.execSQL("INSERT INTO Question VALUES (null,\"Superficie de la Terre : 510'067'420km²\", 0)");
+        sqLiteDatabase.execSQL("INSERT INTO Question VALUES (null,\"La terre est plate\", 1)");
+        sqLiteDatabase.execSQL("INSERT INTO Question VALUES (null,\"N'appuis pas    (°ー°〃)\", 1)");
 
     }
 
