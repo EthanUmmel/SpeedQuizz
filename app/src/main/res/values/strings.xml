@@ -6,7 +6,6 @@
     <string name="main_bt_start">Commencer</string>
     <string name="ScoreJ1">0</string>
     <string name="ScoreJ2">0</string>
-    <string name="joy">－O－</string>
     <string name="timer">Partez !!!</string>
     <string name="fin">Terminé !!</string>
 </resources>

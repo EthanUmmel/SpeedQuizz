@@ -14,8 +14,6 @@
     <Button
         android:id="@+id/bt_reponseJ2"
         style="@style/style_bouton"
-        android:text="@string/joy"
-        android:textColor="@color/white"
         android:textSize="16sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -30,6 +28,7 @@
     <!--Nom du joueur 2-->
     <TextView
         android:id="@+id/PseudoJ2"
+        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@id/bt_reponseJ2"
@@ -43,6 +42,7 @@
     <!--question du joueur 2-->
     <TextView
         android:id="@+id/questionJ2"
+        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -58,6 +58,7 @@
     <!--Score du joueur 2-->
     <TextView
         android:id="@+id/scoreJ2"
+        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -110,6 +111,7 @@
     <!--Score du joueur 1-->
     <TextView
         android:id="@+id/scoreJ1"
+        android:textColor="@color/black"
         android:rotation="180"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -123,6 +125,7 @@
     <!--question du joueur 1-->
     <TextView
         android:id="@+id/questionJ1"
+        android:textColor="@color/black"
         android:rotation="180"
         android:maxLines="1"
         android:layout_width="wrap_content"
@@ -136,6 +139,7 @@
     <!--Nom du joueur 1-->
     <TextView
         android:id="@+id/PseudoJ1"
+        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:rotation="180"
         android:layout_height="wrap_content"
@@ -150,15 +154,13 @@
         android:id="@+id/bt_reponseJ1"
         style="@style/style_bouton"
         android:textSize="16sp"
-        android:textColor="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:padding="@dimen/game_marge_boutton"
-        android:layout_margin="@dimen/main_marge_bt"
-        android:text="@string/joy"/>
+        android:layout_margin="@dimen/main_marge_bt" />
 
 
 </RelativeLayout>

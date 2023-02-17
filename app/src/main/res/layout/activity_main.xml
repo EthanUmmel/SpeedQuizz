@@ -16,6 +16,7 @@
         android:layout_marginVertical="@dimen/main_margesVerticales_titre">
 
         <TextView
+            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/main_titre"
@@ -35,6 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/main_marges_layout"
+            android:textColor="@color/black"
             android:hint="@string/main_indice_layoutJ1">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -44,6 +46,7 @@
                 android:textAlignment="center"
                 android:textSize="20sp"
                 android:singleLine="true"
+                android:textColor="@color/black"
                 android:background="@color/background_layout"
             />
         </com.google.android.material.textfield.TextInputLayout>
@@ -52,6 +55,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/main_marges_layout"
+            android:textColor="@color/black"
             android:hint="@string/main_indice_layoutJ2">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -61,6 +65,7 @@
                 android:textAlignment="center"
                 android:textSize="20sp"
                 android:singleLine="true"
+                android:textColor="@color/black"
                 android:background="@color/background_layout"
             />
         </com.google.android.material.textfield.TextInputLayout>
@@ -76,6 +81,7 @@
             android:layout_height="wrap_content"
             android:text="@string/main_bt_start"
             android:layout_alignParentEnd="true"
+            android:textColor="@color/black"
             android:layout_margin ="@dimen/main_marge_bt"
         />
     </RelativeLayout>

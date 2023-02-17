@@ -40,14 +40,14 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
                 if (!ET_nomJoueur1.getText().toString().isEmpty()) {
                     ET_nomJoueur2.setVisibility(View.VISIBLE);
                 } else {
+                    ET_nomJoueur2.setText("");
                     ET_nomJoueur2.setVisibility(View.GONE);
-                    resetField();
                 }
             }
+
             @Override
             public void afterTextChanged(Editable editable) {}
         });
@@ -58,14 +58,13 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
                 if (!ET_nomJoueur2.getText().toString().isEmpty()) {
                     BT_Start.setVisibility(View.VISIBLE);
                 } else {
                     BT_Start.setVisibility(View.GONE);
-                    resetField();
                 }
             }
+
             @Override
             public void afterTextChanged(Editable editable) {}
         });
@@ -83,12 +82,5 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(activity_game);
             }
         });
-
-    }
-
-    private void resetField() {
-        ET_nomJoueur1.setText("");
-        ET_nomJoueur2.setText("");
-        BT_Start.setEnabled(false);
     }
 }
