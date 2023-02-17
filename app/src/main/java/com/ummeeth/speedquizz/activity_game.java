@@ -122,18 +122,13 @@ public class activity_game extends AppCompatActivity {
                 if (derniereQuestion) {
                     timerJ1.setText(R.string.fin);
                     timerJ2.setText(R.string.fin);
-                    textQuestionJ1.setText("");
-                    textQuestionJ2.setText("");
                     BTJ1.setEnabled(false);
                     BTJ2.setEnabled(false);
                     handler.removeCallbacks(questionRunnable);
                 }
             }
         };
-
         handler.postDelayed(questionRunnable, 1000);
-
-
     }
 
     private void startCountDownTimer() {
@@ -151,6 +146,19 @@ public class activity_game extends AppCompatActivity {
             }
 
         }.start();
+    }
+
+    private void afficheVainqueur() {
+        if (scoreJoueur1 > scoreJoueur2) {
+            timerJ1.setText(R.string.victoire);
+            timerJ2.setText(R.string.défaite);
+        } else if (scoreJoueur1 < scoreJoueur2) {
+            timerJ1.setText(R.string.défaite);
+            timerJ2.setText(R.string.victoire);
+        } else {
+            timerJ1.setText(R.string.égalité);
+            timerJ2.setText(R.string.égalité);
+        }
     }
 
 }

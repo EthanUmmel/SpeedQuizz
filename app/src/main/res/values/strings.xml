@@ -8,4 +8,7 @@
     <string name="ScoreJ2">0</string>
     <string name="timer">Partez !!!</string>
     <string name="fin">Terminé !!</string>
+    <string name="victoire">Victoire</string>
+    <string name="défaite">Défaite</string>
+    <string name="égalité">Egalité</string>
 </resources>
