@@ -72,6 +72,7 @@ public class activity_game extends AppCompatActivity {
                 scoreJoueur1 -= 1;
             }
             ScoreJ1.setText(String.valueOf(scoreJoueur1));
+            listeQuestion.remove(index);
 
         });
         BTJ2.setOnClickListener(view -> {
@@ -83,6 +84,7 @@ public class activity_game extends AppCompatActivity {
                 scoreJoueur2 -= 1;
             }
             ScoreJ2.setText(String.valueOf(scoreJoueur2));
+            listeQuestion.remove(index);
 
         });
         startCountDownTimer();
@@ -114,10 +116,8 @@ public class activity_game extends AppCompatActivity {
                 if (listeQuestion.size() == 1) {
                     derniereQuestion = true;
                     handler.postDelayed(this,3500);
-                    listeQuestion.remove(index);
                 } else {
                     handler.postDelayed(this,3500);
-                    listeQuestion.remove(index);
                 }
                 if (derniereQuestion) {
                     timerJ1.setText(R.string.fin);
@@ -128,11 +128,10 @@ public class activity_game extends AppCompatActivity {
                     BTJ2.setEnabled(false);
                     handler.removeCallbacks(questionRunnable);
                 }
-
             }
         };
-        handler.postDelayed(questionRunnable, 1000);
 
+        handler.postDelayed(questionRunnable, 1000);
 
 
     }
