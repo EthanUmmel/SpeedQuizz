@@ -147,18 +147,4 @@ public class activity_game extends AppCompatActivity {
 
         }.start();
     }
-
-    private void afficheVainqueur() {
-        if (scoreJoueur1 > scoreJoueur2) {
-            timerJ1.setText(R.string.victoire);
-            timerJ2.setText(R.string.défaite);
-        } else if (scoreJoueur1 < scoreJoueur2) {
-            timerJ1.setText(R.string.défaite);
-            timerJ2.setText(R.string.victoire);
-        } else {
-            timerJ1.setText(R.string.égalité);
-            timerJ2.setText(R.string.égalité);
-        }
-    }
-
 }
